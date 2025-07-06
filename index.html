@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大模型学习路径</title>
+    <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+    <style>
+        @keyframes glow { 0% { text-shadow: 0 0 10px currentColor; } 100% { text-shadow: 0 0 30px currentColor; } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes slideIn { from { transform: translateX(-100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .fragment.custom.zoom-in { transition: all 0.8s ease; }
+        .fragment.custom.zoom-in.visible { transform: scale(1) !important; opacity: 1 !important; }
+        .fragment.custom.slide-right { transition: all 0.8s ease; }
+        .fragment.custom.slide-right.visible { transform: translateX(0) !important; opacity: 1 !important; }
+        .reveal .progress { height: 6px; background: linear-gradient(90deg, #667eea, #764ba2); }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- 封面 -->
+            <section data-background-gradient="linear-gradient(45deg, #1e3c72, #2a5298)" data-transition="zoom">
+                <h1 class="r-fit-text" style="animation: glow 2s ease-in-out infinite alternate;">🤖 大模型学习路径</h1>
+                <h3 class="fragment fade-up">从入门到实践的完整指南</h3>
+                <p class="fragment fade-up"><small>2024年最新版本</small></p>
+                <div class="fragment fade-up" style="margin-top: 50px;">
+                    <div style="display: inline-block; padding: 10px 20px; border: 2px solid #fff; border-radius: 25px; animation: pulse 2s infinite;">
+                        <span style="font-size: 1.2em;">🚀 开启AI学习之旅</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 目录 -->
+            <section data-transition="slide">
+                <h2>📋 学习路径概览</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li class="fragment custom slide-right" style="margin: 20px 0; padding: 15px; background: linear-gradient(45deg, #ff6b6b, #ee5a24); border-radius: 10px; transform: translateX(-100px); opacity: 0;">
+                        🎯 基础知识准备
+                    </li>
+                    <li class="fragment custom slide-right" style="margin: 20px 0; padding: 15px; background: linear-gradient(45deg, #a55eea, #8e44ad); border-radius: 10px; transform: translateX(-100px); opacity: 0;">
+                        📚 理论学习阶段
+                    </li>
+                    <li class="fragment custom slide-right" style="margin: 20px 0; padding: 15px; background: linear-gradient(45deg, #26de81, #20bf6b); border-radius: 10px; transform: translateX(-100px); opacity: 0;">
+                        🛠️ 实践应用阶段
+                    </li>
+                    <li class="fragment custom slide-right" style="margin: 20px 0; padding: 15px; background: linear-gradient(45deg, #fd79a8, #e84393); border-radius: 10px; transform: translateX(-100px); opacity: 0;">
+                        🚀 进阶专业化
+                    </li>
+                    <li class="fragment custom slide-right" style="margin: 20px 0; padding: 15px; background: linear-gradient(45deg, #fdcb6e, #e17055); border-radius: 10px; transform: translateX(-100px); opacity: 0;">
+                        💼 项目实战
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 第一阶段：基础知识 -->
+            <section>
+                <section data-background="#2c3e50" data-transition="convex">
+                    <div class="fragment custom zoom-in" style="transform: scale(0.8); opacity: 0;">
+                        <h2 style="background: linear-gradient(45deg, #ff6b6b, #ee5a24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5em;">🎯 阶段一：基础知识准备</h2>
+                        <div style="margin-top: 30px;">
+                            <div style="display: inline-block; padding: 20px; border: 3px dashed #ff6b6b; border-radius: 15px; animation: pulse 3s infinite;">
+                                <p style="font-size: 1.3em; margin: 0;">🏗️ 打好扎实的基础</p>
+                            </div>
+                        </div>
+                        <div class="fragment fade-up" style="margin-top: 40px;">
+                            <div class="r-hstack" style="gap: 30px;">
+                                <div style="animation: float 3s ease-in-out infinite;">📐</div>
+                                <div style="animation: float 3s ease-in-out infinite 0.5s;">💻</div>
+                                <div style="animation: float 3s ease-in-out infinite 1s;">🧠</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section data-auto-animate data-transition="slide">
+                    <h3 style="color: #ff6b6b;">📐 数学基础</h3>
+                    <div style="background: rgba(255,107,107,0.1); padding: 30px; border-radius: 20px; border: 2px solid #ff6b6b;">
+                        <ul style="list-style: none; padding: 0;">
+                            <li class="fragment custom slide-right" style="margin: 25px 0; padding: 15px; background: linear-gradient(90deg, #ff6b6b, transparent); border-radius: 10px; transform: translateX(-50px); opacity: 0;">
+                                <span style="font-size: 1.5em;">🔢</span> <strong>线性代数</strong> - 矩阵运算、特征值
+                            </li>
+                            <li class="fragment custom slide-right" style="margin: 25px 0; padding: 15px; background: linear-gradient(90deg, #ff6b6b, transparent); border-radius: 10px; transform: translateX(-50px); opacity: 0;">
+                                <span style="font-size: 1.5em;">📊</span> <strong>概率统计</strong> - 贝叶斯定理、分布
+                            </li>
+                            <li class="fragment custom slide-right" style="margin: 25px 0; padding: 15px; background: linear-gradient(90deg, #ff6b6b, transparent); border-radius: 10px; transform: translateX(-50px); opacity: 0;">
+                                <span style="font-size: 1.5em;">📈</span> <strong>微积分</strong> - 梯度、优化
+                            </li>
+                        </ul>
+                        <div class="fragment" style="margin-top: 30px;">
+                            <div style="display: inline-block; animation: pulse 2s infinite;">
+                                <span style="font-size: 2em;">⚡</span>
+                                <span style="color: #ff6b6b; font-weight: bold;">数学是AI的语言</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate data-transition="slide">
+                    <h3 style="color: #26de81;">💻 编程技能</h3>
+                    <div class="fragment custom zoom-in" style="transform: scale(0.8); opacity: 0;">
+                        <pre style="background: linear-gradient(135deg, #1e3c72, #2a5298); border: 2px solid #26de81; border-radius: 15px; box-shadow: 0 10px 30px rgba(38, 222, 129, 0.3);"><code class="python" data-trim data-line-numbers="|1-3|5-7">
+# Python 基础 🐍
+import numpy as np      # 数值计算基石
+import torch           # 深度学习框架
+import transformers    # 大模型工具箱
+
+# 数据处理 📊
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+                        </code></pre>
+                    </div>
+                    <div class="fragment fade-up" style="margin-top: 30px;">
+                        <div class="r-hstack" style="gap: 20px;">
+                            <div class="fragment" style="padding: 10px 20px; background: #26de81; border-radius: 25px; color: white; font-weight: bold; animation: bounce 2s infinite;">
+                                🐍 Python
+                            </div>
+                            <div class="fragment" style="padding: 10px 20px; background: #fd79a8; border-radius: 25px; color: white; font-weight: bold; animation: bounce 2s infinite 0.2s;">
+                                🔥 PyTorch
+                            </div>
+                            <div class="fragment" style="padding: 10px 20px; background: #fdcb6e; border-radius: 25px; color: white; font-weight: bold; animation: bounce 2s infinite 0.4s;">
+                                🤗 Transformers
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- 第二阶段：理论学习 -->
+            <section>
+                <section data-background="#8e44ad" data-transition="zoom">
+                    <div class="fragment custom zoom-in" style="transform: scale(0.5); opacity: 0;">
+                        <h2 style="background: linear-gradient(45deg, #a55eea, #8e44ad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5em; animation: glow 2s infinite alternate;">📚 阶段二：理论学习</h2>
+                        <div style="margin-top: 30px;">
+                            <div style="display: inline-block; padding: 25px; background: rgba(255,255,255,0.1); border-radius: 20px; backdrop-filter: blur(10px); animation: pulse 3s infinite;">
+                                <p style="font-size: 1.4em; margin: 0;">🧠 深入理解大模型原理</p>
+                            </div>
+                        </div>
+                        <div class="fragment fade-up" style="margin-top: 50px;">
+                            <div class="r-hstack" style="gap: 40px;">
+                                <div style="animation: rotate 4s linear infinite;">⚙️</div>
+                                <div style="animation: pulse 2s ease-in-out infinite;">🔬</div>
+                                <div style="animation: bounce 2s ease-in-out infinite;">📖</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="slide">
+                    <h3 style="color: #a55eea;">🏗️ Transformer架构</h3>
+                    <div class="fragment custom zoom-in" style="transform: scale(0.8); opacity: 0;">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*BHzGVskWGS_3jEcYYi6miQ.png" 
+                             alt="Transformer架构" style="height: 400px; border-radius: 15px; box-shadow: 0 15px 35px rgba(165, 94, 234, 0.4); animation: float 3s ease-in-out infinite;">
+                    </div>
+                    <div class="fragment fade-up" style="margin-top: 20px;">
+                        <div style="display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #a55eea, #8e44ad); border-radius: 25px; animation: pulse 2s infinite;">
+                            <span style="color: white; font-weight: bold; font-size: 1.2em;">💡 注意力机制是核心</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate data-transition="fade">
+                    <h3 style="color: #a55eea;">🎯 注意力机制</h3>
+                    <div style="background: rgba(165, 94, 234, 0.1); padding: 30px; border-radius: 20px; border: 2px solid #a55eea;">
+                        <p class="fragment" style="font-size: 1.3em; color: #a55eea;">Self-Attention 公式：</p>
+                        <div class="fragment custom zoom-in" style="transform: scale(0.8); opacity: 0;">
+                            <p style="font-size: 1.8em; background: linear-gradient(45deg, #a55eea, #8e44ad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; animation: glow 2s ease-in-out infinite alternate;">Attention(Q,K,V) = softmax(QK^T/√d_k)V</p>
+                        </div>
+                        <div class="r-hstack" style="gap: 30px; margin-top: 30px;">
+                            <div class="fragment" style="padding: 20px; background: linear-gradient(45deg, #ff6b6b, #ee5a24); border-radius: 15px; color: white; animation: bounce 2s infinite;">
+                                <strong>Q</strong><br><small>Query 查询矩阵</small>
+                            </div>
+                            <div class="fragment" style="padding: 20px; background: linear-gradient(45deg, #26de81, #20bf6b); border-radius: 15px; color: white; animation: bounce 2s infinite 0.2s;">
+                                <strong>K</strong><br><small>Key 键矩阵</small>
+                            </div>
+                            <div class="fragment" style="padding: 20px; background: linear-gradient(45deg, #fd79a8, #e84393); border-radius: 15px; color: white; animation: bounce 2s infinite 0.4s;">
+                                <strong>V</strong><br><small>Value 值矩阵</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- 第三阶段：实践应用 -->
+            <section>
+                <section data-background="#27ae60" data-transition="convex">
+                    <div class="fragment custom zoom-in" style="transform: scale(0.6); opacity: 0;">
+                        <h2 style="background: linear-gradient(45deg, #26de81, #20bf6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5em; animation: glow 2s ease-in-out infinite alternate;">🛠️ 阶段三：实践应用</h2>
+                        <div style="margin-top: 30px;">
+                            <div style="display: inline-block; padding: 25px; background: rgba(255,255,255,0.15); border-radius: 20px; backdrop-filter: blur(10px); animation: pulse 3s ease-in-out infinite;">
+                                <p style="font-size: 1.4em; margin: 0; color: white;">💪 动手实践，学以致用</p>
+                            </div>
+                        </div>
+                        <div class="fragment fade-up" style="margin-top: 50px;">
+                            <div class="r-hstack" style="gap: 40px;">
+                                <div style="animation: bounce 2s ease-in-out infinite;">⚡</div>
+                                <div style="animation: rotate 3s linear infinite;">⚙️</div>
+                                <div style="animation: pulse 2s ease-in-out infinite;">🚀</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="slide">
+                    <h3 style="color: #26de81;">🤖 预训练模型使用</h3>
+                    <div class="fragment custom zoom-in" style="transform: scale(0.8); opacity: 0;">
+                        <pre style="background: linear-gradient(135deg, #1e3c72, #2a5298); border: 3px solid #26de81; border-radius: 20px; box-shadow: 0 15px 35px rgba(38, 222, 129, 0.4); animation: glow 3s ease-in-out infinite alternate;"><code class="python" data-trim data-line-numbers="1-8|10-15">
+from transformers import AutoTokenizer, AutoModel
+
+# 加载预训练模型 🚀
+tokenizer = AutoTokenizer.from_pretrained('bert-base-chinese')
+model = AutoModel.from_pretrained('bert-base-chinese')
+
+# 文本编码 📝
+inputs = tokenizer("你好，世界！", return_tensors="pt")
+
+# 获取特征 🧠
+with torch.no_grad():
+    outputs = model(**inputs)
+    embeddings = outputs.last_hidden_state
+    
+print(f"输出维度: {embeddings.shape}")  # 🎯
+                        </code></pre>
+                    </div>
+                    <div class="fragment fade-up" style="margin-top: 30px;">
+                        <div class="r-hstack" style="gap: 20px;">
+                            <div class="fragment" style="padding: 15px 25px; background: linear-gradient(45deg, #26de81, #20bf6b); border-radius: 25px; color: white; font-weight: bold; animation: pulse 2s infinite;">
+                                ⚡ 3行代码加载模型
+                            </div>
+                            <div class="fragment" style="padding: 15px 25px; background: linear-gradient(45deg, #fd79a8, #e84393); border-radius: 25px; color: white; font-weight: bold;">
+                                🎯 即开即用
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- 学习时间规划 -->
+            <section data-transition="slide">
+                <h2 style="color: #667eea;">⏰ 学习时间规划</h2>
+                <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <div class="fragment custom slide-right" style="margin: 25px 0; padding: 20px; background: linear-gradient(90deg, #ff6b6b, rgba(255,107,107,0.1)); border-radius: 15px; border-left: 5px solid #ff6b6b; transform: translateX(-100px); opacity: 0;">
+                        <strong style="font-size: 1.3em;">第1-2月：</strong> <span style="font-size: 1.1em;">基础知识准备 📚</span>
+                        <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">数学基础 + Python编程 + 机器学习入门</div>
+                    </div>
+                    <div class="fragment custom slide-right" style="margin: 25px 0; padding: 20px; background: linear-gradient(90deg, #a55eea, rgba(165,94,234,0.1)); border-radius: 15px; border-left: 5px solid #a55eea; transform: translateX(-100px); opacity: 0;">
+                        <strong style="font-size: 1.3em;">第3-4月：</strong> <span style="font-size: 1.1em;">理论学习深入 🧠</span>
+                        <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">深度学习 + Transformer + 注意力机制</div>
+                    </div>
+                    <div class="fragment custom slide-right" style="margin: 25px 0; padding: 20px; background: linear-gradient(90deg, #26de81, rgba(38,222,129,0.1)); border-radius: 15px; border-left: 5px solid #26de81; transform: translateX(-100px); opacity: 0;">
+                        <strong style="font-size: 1.3em;">第5-6月：</strong> <span style="font-size: 1.1em;">实践应用练习 💻</span>
+                        <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">预训练模型使用 + 微调技术 + 框架掌握</div>
+                    </div>
+                    <div class="fragment custom slide-right" style="margin: 25px 0; padding: 20px; background: linear-gradient(90deg, #fd79a8, rgba(253,121,168,0.1)); border-radius: 15px; border-left: 5px solid #fd79a8; transform: translateX(-100px); opacity: 0;">
+                        <strong style="font-size: 1.3em;">第7-8月：</strong> <span style="font-size: 1.1em;">进阶专业化 🚀</span>
+                        <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">选择方向 + 深入研究 + 前沿技术</div>
+                    </div>
+                    <div class="fragment custom slide-right" style="margin: 25px 0; padding: 20px; background: linear-gradient(90deg, #fdcb6e, rgba(253,203,110,0.1)); border-radius: 15px; border-left: 5px solid #fdcb6e; transform: translateX(-100px); opacity: 0;">
+                        <strong style="font-size: 1.3em;">第9-12月：</strong> <span style="font-size: 1.1em;">项目实战积累 🏆</span>
+                        <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">完整项目 + 部署上线 + 作品集建设</div>
+                    </div>
+                </div>
+                <div class="fragment custom zoom-in" style="margin-top: 50px; transform: scale(0.8); opacity: 0;">
+                    <div style="display: inline-block; padding: 20px 40px; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 25px; animation: pulse 2s infinite;">
+                        <span style="color: white; font-size: 1.2em; font-weight: bold;">💡 建议每天投入2-3小时，持续学习是关键！</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 结尾 -->
+            <section data-background-gradient="linear-gradient(45deg, #667eea, #764ba2)" data-transition="zoom">
+                <h1 style="animation: glow 2s ease-in-out infinite alternate;">🎯 开始你的大模型之旅</h1>
+                <blockquote class="fragment fade-up">
+                    "千里之行，始于足下。每一个AI专家都是从第一行代码开始的。"
+                </blockquote>
+                <div class="fragment fade-up" style="margin-top: 40px;">
+                    <div style="display: inline-block; padding: 20px 40px; background: rgba(255,255,255,0.1); border-radius: 25px; backdrop-filter: blur(10px); animation: pulse 2s infinite;">
+                        <strong style="font-size: 1.3em;">记住：</strong> 理论与实践并重，持续学习，勇于尝试！
+                    </div>
+                </div>
+                <p class="fragment fade-up" style="margin-top: 30px;">
+                    <span style="font-size: 1.2em; animation: bounce 2s ease-in-out infinite;">祝你在AI的道路上越走越远！ 🌟</span>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            controls: true,
+            progress: true,
+            touch: true,
+            fragments: true
+        });
+    </script>
+</body>
+</html>
